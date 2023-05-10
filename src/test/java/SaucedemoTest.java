@@ -50,21 +50,29 @@ public class SaucedemoTest {
 //                .class
         WebElement locatorClass = driver.findElement(By.cssSelector(".bm-burger-button"));
 //                .class1.class2
-        WebElement locatorClass = driver.findElement(By.cssSelector(".bm-burger-button"));
+        WebElement locatorTwoClass = driver.findElement(By.cssSelector(".btn.btn_primary"));
+//                .class1 .class2
+        WebElement locatorClass2descendantClass1  = driver.findElement(By.cssSelector(".pricebar .btn_primary"));
 //                #id
+        WebElement userName = driver.findElement(By.cssSelector("#add-to-cart-sauce-labs-bike-light"));
 //                tagname
 //                tagname.class
+        WebElement locatorTagClass = driver.findElement(By.cssSelector("div.inventory_item_price"));
 //                [attribute=value]
+        WebElement locatorAttribute = driver.findElement(By.cssSelector("button[data-test='add-to-cart-sauce-labs-bolt-t-shirt']"));
 //                [attribute~=value]
+        WebElement locatorAttributeTilde = driver.findElement(By.cssSelector("[style~='height:']"));
 //                [attribute|=value]
+        WebElement locatorAttributePipeline  = driver.findElement(By.cssSelector("[name|='add']"));
 //                [attribute^=value]
+        WebElement locatorAttributeExtent = driver.findElement(By.cssSelector("link[href^='/favi']"));
 //                [attribute$=value]
+        WebElement locatorAttributeUsd = driver.findElement(By.cssSelector("link[href$='.ico']"));
 //                [attribute*=value]
+        WebElement locatorAttributeStar = driver.findElement(By.cssSelector("button[data-test*='labs-bolt']"));
 //                element:first-child
+        WebElement locatorElementFirstChild = driver.findElement(By.cssSelector("nav:first-child"));
 //                element:nth-child(0)
-
-
-
-
+        WebElement locatorElementNthChild = driver.findElement(By.cssSelector("div.pricebar:nth-child(2)"));
     }
 }
