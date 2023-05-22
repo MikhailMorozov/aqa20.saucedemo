@@ -8,12 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 
 public class TwitterPage extends BasePage{
-
     private By TWITTER_PAGE = By.xpath("//span[text()='@saucelabs']");
     public TwitterPage(WebDriver driver) {
         super(driver);
     }
-
     public boolean isDisplayTwitterPageAndWait() {
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, 5);

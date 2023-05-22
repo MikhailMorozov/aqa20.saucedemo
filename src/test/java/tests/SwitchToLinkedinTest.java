@@ -9,7 +9,7 @@ import page.TwitterPage;
 public class SwitchToLinkedinTest extends BaseTest{
 
     @Test
-    public void switchToTwitterPageTest() {
+    public void switchToSauceLabsOnTwitterPageTest() {
         // открытие страницы LoginPage
         LoginPage mainPage = new LoginPage(driver);
         mainPage.openLoginPage();
