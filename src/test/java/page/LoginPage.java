@@ -5,9 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage{
-    private final String loginStandardUser = "standard_user";
-    private final String password = "secret_sauce";
-
     private final By LOGIN_INPUT = By.id("user-name");
     private final By PASSWORD_INPUT = By.id("password");
     private final By LOGIN_BUTTON = By.id("login-button");
@@ -19,10 +16,10 @@ public class LoginPage extends BasePage{
         driver.get(PageUrls.SAUCE_LOGIN_PAGE);
     }
     public void inputLoginStandardUser() {
-        driver.findElement(LOGIN_INPUT).sendKeys(loginStandardUser);
+        driver.findElement(LOGIN_INPUT).sendKeys(System.getProperty("loginStandardUser"));
     }
     public void inputPassword() {
-        driver.findElement(PASSWORD_INPUT).sendKeys(password);
+        driver.findElement(PASSWORD_INPUT).sendKeys(System.getProperty("password"));
     }
     public void clickLoginButton() {
         driver.findElement(LOGIN_BUTTON).click();
