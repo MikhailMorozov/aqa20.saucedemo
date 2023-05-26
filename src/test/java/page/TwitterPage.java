@@ -14,7 +14,7 @@ public class TwitterPage extends BasePage{
     }
     public boolean isDisplayTwitterPageAndWait() {
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        WebDriverWait wait = new WebDriverWait(driver, 5);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOfElementLocated(TWITTER_PAGE));
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return true;
