@@ -1,27 +1,34 @@
 package page;
 
 import constants.PageUrls;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage{
-    private final By LOGIN_INPUT = By.id("user-name");
-    private final By PASSWORD_INPUT = By.id("password");
-    private final By LOGIN_BUTTON = By.id("login-button");
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
-    }
-    public void openLoginPage() {
+    @FindBy(xpath = "//input[@id='user-name'")
+    private WebElement LOGIN_INPUT;
+
+    @FindBy(xpath = "//input[@id='password']")
+    private WebElement  PASSWORD_INPUT;
+
+    @FindBy(xpath = "//input[@id='login-button']")
+    private WebElement LOGIN_BUTTON;
+
+
+    public LoginPage openLoginPage() {
         driver.get(PageUrls.SAUCE_LOGIN_PAGE);
+        return this;
     }
-    public void inputLoginStandardUser() {
-        driver.findElement(LOGIN_INPUT).sendKeys(System.getProperty("loginStandardUser"));
+    public LoginPage inputLoginStandardUser(String login) {
+        waitVisibilityOf(LOGIN_INPUT).sendKeys(login);
+        return this;
     }
-    public void inputPassword() {
-        driver.findElement(PASSWORD_INPUT).sendKeys(System.getProperty("password"));
+    public LoginPage inputPassword(String password) {
+        waitVisibilityOf(PASSWORD_INPUT).sendKeys(password);
+        return this;
     }
     public void clickLoginButton() {
-        driver.findElement(LOGIN_BUTTON).click();
+        waitElementToBeClickable(LOGIN_BUTTON).click();
     }
 }
