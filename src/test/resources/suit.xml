@@ -2,9 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="UI test" >
 
-    <test name="sauced test">
+    <test name="sauced test" parallel="tests" thread-count="1">
         <classes>
-            <class name="tests.SwitchToLinkedinTest"/>
+            <class name="tests.SaucedemoTest"/>
         </classes>
     </test>
 </suite>

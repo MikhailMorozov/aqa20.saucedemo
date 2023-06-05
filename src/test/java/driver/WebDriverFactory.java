@@ -15,7 +15,7 @@ public class WebDriverFactory {
     }
     public static WebDriver getWebDriver() {
         WebDriver driver = null;
-        String browser = System.getProperty("browser");
+        String browser = System.getProperty("browser", "chrome");
         if (browser.equals("opera")) {
             WebDriverManager.operadriver().setup();
             driver = new OperaDriver();

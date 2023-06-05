@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage{
 
-    @FindBy(xpath = "//input[@id='user-name'")
+    @FindBy(xpath = "//input[@id='user-name']")
     private WebElement LOGIN_INPUT;
 
     @FindBy(xpath = "//input[@id='password']")
@@ -31,4 +31,10 @@ public class LoginPage extends BasePage{
     public void clickLoginButton() {
         waitElementToBeClickable(LOGIN_BUTTON).click();
     }
+
+    public boolean loginButtonIsDisplayed() {
+        return waitVisibilityOf(LOGIN_BUTTON).isDisplayed();
+    }
+
+
 }
